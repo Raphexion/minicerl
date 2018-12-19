@@ -5,7 +5,8 @@
   {mod, { minicerl_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    minicerl
    ]},
   {env,[]},
   {modules, []},
