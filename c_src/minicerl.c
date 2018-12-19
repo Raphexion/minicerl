@@ -44,13 +44,13 @@ unload(ErlNifEnv* env, void* priv)
 // Docs: http://erlang.org/doc/man/erl_nif.html#ErlNifFunc
 
 static ERL_NIF_TERM
-skeleton(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
+minicerl(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
 {
     return enif_make_badarg(env);
 }
 
 static ErlNifFunc nif_funcs[] = {
-    {"skeleton", 1, skeleton}
+    {"minicerl", 1, minicerl}
 };
 
 // Initialize this NIF library.
@@ -58,7 +58,7 @@ static ErlNifFunc nif_funcs[] = {
 // Args: (MODULE, ErlNifFunc funcs[], load, reload, upgrade, unload)
 // Docs: http://erlang.org/doc/man/erl_nif.html#ERL_NIF_INIT
 
-ERL_NIF_INIT(skeleton, nif_funcs, &load, NULL, &upgrade, &unload);
+ERL_NIF_INIT(minicerl, nif_funcs, &load, NULL, &upgrade, &unload);
 
 // Or if you don't need reload, upgrade, or unload.
-// ERL_NIF_INIT(skeleton, nif_funcs, &load, NULL, NULL, NULL);
+// ERL_NIF_INIT(minicerl, nif_funcs, &load, NULL, NULL, NULL);
